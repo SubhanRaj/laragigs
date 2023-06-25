@@ -12,6 +12,10 @@
              <div class="text-lg mt-4">
                  <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
              </div>
+             <div class="text-sm mt-4">
+                 <i class="fa-solid fa-calendar-days"></i> Created {{$listing->created_at->diffForHumans()}}
+                 <i class="fa-solid fa-clock"></i> Last updated {{$listing->updated_at->diffForHumans()}}
+             </div>
          </div>
      </div>
  </x-card>
