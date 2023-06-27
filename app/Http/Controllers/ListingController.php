@@ -37,10 +37,19 @@ class ListingController extends Controller
             'email' => ['required', 'email'],
             'website' => ['required', 'url'],
             'tags' => 'required',
+            'logo' => ['required', 'image', 'mimes:png,jpg,jpeg,gif,svg', 'max:2048'],
             'description' => 'required'
        ]);
+
+       if($request->hasFile('logo')){
+              $logo = $request->file('logo');
+              $logoName = time() . '.' . $logo->getClientOriginalExtension();
+              $logo->move(public_path('images'), $logoName);
+              $formFields['logo'] = $logoName;
+       }
        Listing::create($formFields);
 
        return redirect('/')->with('message', 'Listing Created Successfully!');
     }
 }
+  
