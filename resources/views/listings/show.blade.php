@@ -1,10 +1,23 @@
 <x-layout>
     <a href="/" class="inline-block sticky top-10 text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
+    <form action="/">
+        <div class="relative border-2 border-gray-100 m-4 rounded-lg">
+            <div class="absolute top-4 left-3">
+                <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
+            </div>
+            <input type="text" name="search" class="h-14 w-full pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" placeholder="Search Laravel Gigs..." />
+            <div class="absolute top-2 right-2">
+                <button type="submit" class="h-10 w-20 text-white rounded-lg bg-red-500 hover:bg-red-600">
+                    Search
+                </button>
+            </div>
+        </div>
+    </form>
     <div class="mx-4">
         <x-card class="p-10">
             <div class="flex flex-col items-center justify-center text-center">
-                <img class="w-48 mr-6 mb-6" src="{{$listing->logo? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="" />
+                <img class="w-48 mr-6 mb-6" src="{{$listing->logo? asset('storage/' . $listing->logo) : asset('/images/no-image.png')}}" alt="{{$listing->company}} Logo" />
 
                 <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
                 <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
@@ -33,6 +46,11 @@
                     </div>
                 </div>
             </div>
+        </x-card>
+        <x-card class="mt-4 p-2 flex space-x-6">
+            <a href="/listings/{{$listing->id}}/edit">
+                <i class="fa-solid fa-pencil"></i>Edit
+            </a>
         </x-card>
     </div>
 </x-layout>
