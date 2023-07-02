@@ -47,6 +47,9 @@
                 </div>
             </div>
         </x-card>
+        <!-- only show below part if the particular listing belong to that user -->
+        @auth
+        @if(auth()->user()->id == $listing->user_id)
         <x-card class="mt-4 p-2 flex justify-around space-x-6">
             <div class="flex items-center space-x-2">
                 <a href="/listings/{{$listing->id}}/edit" class="text-blue-500">
@@ -64,5 +67,8 @@
                 </form>
             </div>
         </x-card>
+        @endif
+        @endauth
+
     </div>
 </x-layout>
