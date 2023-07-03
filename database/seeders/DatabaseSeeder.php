@@ -19,11 +19,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'john@gmail.com'
         ]);
 
-        Listing::factory(6)->create([
+        Listing::factory(20)->create([
             'user_id' => $user->id
         ]);
 
         // Listing::create([
+        //     'user_id' => '1',
         //     'title' => 'Laravel Senior Developer',
         //     'tags' => 'laravel, javascript',
         //     'company' => 'Acme Corp',
@@ -33,6 +34,7 @@ class DatabaseSeeder extends Seeder
         //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
         // ]);
         // Listing::create([
+        //     'user_id' => '1',
         //     'title' => 'Full-Stack Engineer',
         //     'tags' => 'laravel, backend ,api',
         //     'company' => 'Stark Industries',
