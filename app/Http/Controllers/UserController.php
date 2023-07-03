@@ -52,6 +52,10 @@ class UserController extends Controller
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
 
+    // Show user profile
+    public function profile(){
+        return view('users.profile');
+    }
     // logout
     public function logout(Request $request){
         auth()->logout();
