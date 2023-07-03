@@ -40,6 +40,9 @@ Route::put('/listings/{listing}',[ListingController::class,'update'])->middlewar
 // Delete Listing 
 Route::delete('/listings/{listing}',[ListingController::class,'delete'])->middleware('auth');
 
+// Manage listing
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 

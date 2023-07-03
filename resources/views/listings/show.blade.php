@@ -60,7 +60,7 @@
                 <form method="POST" action="/listings/{{$listing->id}}">
                     @csrf
                     @method('DELETE')
-                    <button class="text-red-500">
+                    <button class="text-red-600">
                         <i class="fa-solid fa-trash"></i>
                         Delete
                     </button>

@@ -26,7 +26,7 @@
                 </span>
             </li>
             <li>
-                <a href="/manage" class="hover:text-laravel"><i class="fa-solid fa-wrench"></i>
+                <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-wrench"></i>
                     Manage Listings
                 </a>
             </li>
